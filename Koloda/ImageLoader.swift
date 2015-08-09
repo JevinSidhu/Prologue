@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class UIImageViewAsync:UIImageView {
+    
 
     override init(frame:CGRect) {
         super.init(frame: CGRect())
@@ -33,4 +34,6 @@ class UIImageViewAsync:UIImageView {
             }
         }
     }
+    
+
 }
