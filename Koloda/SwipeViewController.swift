@@ -9,7 +9,7 @@ import UIKit
 import Koloda
 
 // Number of cards in the deck
-private var numberOfCards: UInt = 2
+private var numberOfCards: UInt = 1
 
 class SwipeViewController: UIViewController, KolodaViewDataSource {
     
@@ -21,7 +21,7 @@ class SwipeViewController: UIViewController, KolodaViewDataSource {
         
     }
     
-    //MARK: IBActions for Buttons
+    //MARK: IBActions for Left + Right + Undo Buttons
     @IBAction func leftButtonTapped() {
         kolodaView?.swipe(SwipeResultDirection.Left)
     }
@@ -35,12 +35,16 @@ class SwipeViewController: UIViewController, KolodaViewDataSource {
     }
     
     //MARK ViewDataSource
+    
     func kolodaNumberOfCards(koloda: KolodaView) -> UInt {
         return numberOfCards
     }
     
     func kolodaViewForCardAtIndex(koloda: KolodaView, index: UInt) -> UIView {
         return UIImageView(image: UIImage(named: "Card_like_\(index + 1)"))
+        
+ // UIImageView(image: UIImage(kolodaView.downloadImage("https://books.google.com/books/content?id=DTp5oAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api,https://books.google.com/books/content?id=DTp5oAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api")))
+    
     }
     
     func kolodaViewForCardOverlayAtIndex(koloda: KolodaView, index: UInt) -> OverlayView? {
@@ -53,6 +57,7 @@ class SwipeViewController: UIViewController, KolodaViewDataSource {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
+    
     
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if (segue.identifier == "ShowDiscoverySegue") {

@@ -8,6 +8,7 @@
         <mutableArray key="Gotham-Rounded-Medium.ttf">
             <string>GothamRounded-Medium</string>
             <string>GothamRounded-Medium</string>
+            <string>GothamRounded-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -34,11 +35,19 @@
                                     <segue destination="vXZ-lx-hvc" kind="show" identifier="ShowDiscoverySegue" id="f2m-aq-hgV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="push for books" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJh-9A-d6x">
+                                <rect key="frame" x="188" y="500" width="226" height="30"/>
+                                <fontDescription key="fontDescription" name="GothamRounded-Medium" family="Gotham Rounded" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.74901960779999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="sGg-fU-nfE" secondAttribute="centerX" constant="-1" id="8ee-US-1d5"/>
+                            <constraint firstAttribute="centerX" secondItem="OJh-9A-d6x" secondAttribute="centerX" constant="-1" id="RlY-oX-2G5"/>
                             <constraint firstAttribute="centerY" secondItem="sGg-fU-nfE" secondAttribute="centerY" constant="-1" id="XCO-Hr-vAa"/>
+                            <constraint firstAttribute="centerY" secondItem="OJh-9A-d6x" secondAttribute="centerY" constant="-215" id="aLy-ed-7bU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VE0-NE-kaX"/>
@@ -53,7 +62,6 @@
         <!--Swipe View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <viewController id="vXZ-lx-hvc" customClass="SwipeViewController" customModule="Koloda_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
@@ -139,6 +147,7 @@
                         <outlet property="kolodaView" destination="gYW-p3-aUa" id="0JW-ms-tfw"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="951" y="136"/>
         </scene>
