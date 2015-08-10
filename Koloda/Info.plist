@@ -42,8 +42,6 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>GothamRounded-Medium.ttf</string>
-		<string>GothamRounded-Light.ttf</string>
-		<string>GothamRounded-Book.ttf</string>
 	</array>
 </dict>
 </plist>
