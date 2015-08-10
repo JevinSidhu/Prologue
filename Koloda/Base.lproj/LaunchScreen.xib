@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,12 +11,18 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="Uv0-pk-Mg1">
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="Uv0-pk-Mg1">
                     <rect key="frame" x="192" y="175" width="97" height="130"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="97" id="TLv-gz-D96"/>
+                        <constraint firstAttribute="width" secondItem="Uv0-pk-Mg1" secondAttribute="height" multiplier="97:130" id="ZOd-4L-eMR"/>
                         <constraint firstAttribute="height" constant="130" id="cY3-tF-rEf"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="ZOd-4L-eMR"/>
+                        </mask>
+                    </variation>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.95294117649999999" green="0.74901960779999999" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
