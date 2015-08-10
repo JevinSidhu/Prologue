@@ -7,6 +7,7 @@
 
 import UIKit
 import Koloda
+import Kingfisher
 
 // Number of cards in the deck
 private var numberOfCards: UInt = 3
