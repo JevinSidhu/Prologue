@@ -4,6 +4,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Gotham-Rounded-Medium.ttf">
+            <string>GothamRounded-Medium</string>
+            <string>GothamRounded-Medium</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Button View Controller-->
         <scene sceneID="s9a-ic-rV3">
@@ -35,6 +41,7 @@
                             <constraint firstAttribute="centerY" secondItem="sGg-fU-nfE" secondAttribute="centerY" constant="-1" id="XCO-Hr-vAa"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="VE0-NE-kaX"/>
                     <connections>
                         <outlet property="buttonBooks" destination="sGg-fU-nfE" id="aAE-dF-uTn"/>
                     </connections>
@@ -46,6 +53,7 @@
         <!--Swipe View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <viewController id="vXZ-lx-hvc" customClass="SwipeViewController" customModule="Koloda_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
@@ -55,16 +63,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYW-p3-aUa" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="180" y="78" width="241" height="353"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="241" id="Wkl-r0-Q82"/>
-                                    <constraint firstAttribute="height" constant="353" id="e6E-cw-TlO"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7d-hf-ZCf">
-                                <rect key="frame" x="188" y="439" width="118" height="96"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7d-hf-ZCf">
+                                <rect key="frame" x="200" y="439" width="95" height="96"/>
                                 <state key="normal" image="btn_skip_normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -83,8 +83,37 @@
                                     <action selector="rightButtonTapped" destination="vXZ-lx-hvc" eventType="touchUpInside" id="x3n-EH-Vxz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Un4-e1-II6">
-                                <rect key="frame" x="539" y="20" width="45" height="45"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYW-p3-aUa" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="180" y="78" width="241" height="353"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="done!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTe-W4-uXS">
+                                        <rect key="frame" x="86" y="165" width="69" height="24"/>
+                                        <fontDescription key="fontDescription" name="GothamRounded-Medium" family="Gotham Rounded" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwT-Ob-H2p">
+                                        <rect key="frame" x="1" y="201" width="238" height="38"/>
+                                        <fontDescription key="fontDescription" name="GothamRounded-Medium" family="Gotham Rounded" pointSize="24"/>
+                                        <state key="normal" title="push button again">
+                                            <color key="titleColor" red="0.23529411764705882" green="0.47843137254901957" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Nf5-wG-ypZ" kind="show" id="RuH-FU-9qL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="Wkl-r0-Q82"/>
+                                    <constraint firstAttribute="centerY" secondItem="iTe-W4-uXS" secondAttribute="centerY" id="YNi-JI-565"/>
+                                    <constraint firstAttribute="height" constant="353" id="e6E-cw-TlO"/>
+                                    <constraint firstAttribute="centerX" secondItem="iTe-W4-uXS" secondAttribute="centerX" constant="0.5" id="uOA-2S-pPT"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Un4-e1-II6">
+                                <rect key="frame" x="563" y="28" width="21" height="22"/>
                                 <state key="normal" image="btn_undo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -97,10 +126,11 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="LAd-kH-OMn" secondAttribute="centerX" constant="-61.5" id="3kU-W3-9Ws"/>
                             <constraint firstAttribute="centerX" secondItem="gYW-p3-aUa" secondAttribute="centerX" constant="-0.5" id="3yS-Gs-0za"/>
+                            <constraint firstItem="Un4-e1-II6" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="JHD-Z3-60v"/>
+                            <constraint firstItem="Un4-e1-II6" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="PH6-oO-Cgc"/>
                             <constraint firstAttribute="centerY" secondItem="LAd-kH-OMn" secondAttribute="centerY" constant="-187" id="Xbr-Uq-hjc"/>
                             <constraint firstAttribute="centerX" secondItem="h7d-hf-ZCf" secondAttribute="centerX" constant="53" id="Y1T-Yd-XUw"/>
                             <constraint firstAttribute="centerY" secondItem="h7d-hf-ZCf" secondAttribute="centerY" constant="-187" id="YxA-a4-qax"/>
-                            <constraint firstItem="Un4-e1-II6" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="a7O-vB-HBu"/>
                             <constraint firstAttribute="centerY" secondItem="gYW-p3-aUa" secondAttribute="centerY" constant="45.5" id="tpN-fS-5gb"/>
                         </constraints>
                     </view>
@@ -109,7 +139,6 @@
                         <outlet property="kolodaView" destination="gYW-p3-aUa" id="0JW-ms-tfw"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="951" y="136"/>
         </scene>
