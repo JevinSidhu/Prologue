@@ -10,7 +10,7 @@ import UIKit
 import Koloda
 
 class ButtonViewController: UIViewController {
-
+    
     func highlightButton(button: UIButton) {
         button.highlighted = true
     }
