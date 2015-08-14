@@ -8,6 +8,8 @@
 import UIKit
 import Koloda
 
+// Overlay constants
+
 private let overlayRightImageName = "yesOverlayImage"
 private let overlayLeftImageName = "noOverlayImage"
 
